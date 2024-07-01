@@ -26,19 +26,18 @@ impl GameDataHandler {
         //     }
         // }
         for game_number in game_numbers {
-                let data = &games[&game_number];
-                println!("Game {}:", game_number);
-                println!("Total Kills: {}", data.total_kills);
-                println!("Players:");
-                for player in &data.players {
-                    println!("- {}: {} kills", player, data.kills.get(player).unwrap_or(&0));
-                }
-                println!("Deaths by means:");
-                for (mod_, count) in &data.kills_by_means {
-                    println!("  {}: {}", mod_, count);
-                }
-                println!();
-
+            let data = &games[&game_number];
+            println!("Game {}:", game_number);
+            println!("Total Kills: {}", data.total_kills);
+            println!("Players:");
+            for player in &data.players {
+                println!("- {}: {} kills", player, data.kills.get(player).unwrap_or(&0));
             }
+            println!("Deaths by means:");
+            for (mod_, count) in &data.kills_by_means {
+                println!("  {}: {}", mod_, count);
+            }
+            println!();
+        }
     }
 }
