@@ -4,9 +4,9 @@ use std::collections::HashMap;
 use std::fs::File;
 use std::io::{self, BufRead, BufReader};
 
-pub struct GameDataReader;
+pub struct DataReader;
 
-impl GameDataReader {
+impl DataReader {
     pub fn read_game_data(file_path: &str) -> io::Result<HashMap<i32, GameData>> {
         let file = File::open(file_path)?;
         let reader = BufReader::new(file);

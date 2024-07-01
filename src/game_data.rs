@@ -1,6 +1,5 @@
 use std::collections::{HashMap, HashSet};
 
-#[derive(Debug, Default)]
 pub struct GameData {
     pub total_kills: i32,
     pub players: HashSet<String>,

@@ -1,16 +1,16 @@
 mod game_data;
-mod game_data_reader;
-mod game_data_processor;
+mod data_reader;
+mod game_data_handler;
 
-use game_data_reader::GameDataReader;
-use game_data_processor::GameDataProcessor;
+use data_reader::DataReader;
+use game_data_handler::GameDataHandler;
 use std::io;
 
 fn main() -> io::Result<()> {
     let file_path = "src/qgames.txt";
 
-    let games = GameDataReader::read_game_data(file_path)?;
-    GameDataProcessor::print_game_data(&games);
+    let games = DataReader::read_game_data(file_path)?;
+    GameDataHandler::print_game_data(&games);
 
     Ok(())
 }
